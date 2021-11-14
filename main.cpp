@@ -49,11 +49,11 @@ register_number_callback(const char* param)
 int
 main(int argc, char const* argv[])
 {
-  assign_callback_to_arg("-ex1", &example_callback);
-  assign_callback_to_arg("-ex2", &example_callback_with_argument);
-  assign_callback_to_arg_LOG("-i", &integer_fun_callback);
-  assign_callback_to_arg_LOG("-v", &vector_fun_callback);
-  assign_callback_to_arg_LOG("-s", &register_number_callback);
+  assign_callback_to_arg("-ex1", example_callback);
+  assign_callback_to_arg("-ex2", example_callback_with_argument);
+  assign_callback_to_arg_LOG("-i", integer_fun_callback);
+  assign_callback_to_arg_LOG("-v", vector_fun_callback);
+  assign_callback_to_arg_LOG("-s", register_number_callback);
 
   process_args(argc, argv);
   print_ints("nums_to_sum = ", nums_to_sum);
