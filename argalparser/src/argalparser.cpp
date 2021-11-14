@@ -36,16 +36,27 @@ example_callback_with_argument(const char* arg_val)
 }
 
 void
-assign_callback_to_arg(const char* arg, arg_callback_f arg_callback_func)
+assign_callback_to_arg(const char* arg, arg_callback_f arg_callback_func, const char* funcname)
 {
   string key(arg);
   if (arg_callback_map.find(key) == arg_callback_map.end())
   {
-    cout << "arg callback " << key << " assigned for first time" << endl;
+    cout << "arg callback " << key << " assigned to " << funcname << endl;
   }
   else
   {
-    cout << "arg callback overwritten" << endl;
+    cout << "Warning: arg callback " << key << " overwritten with " << funcname << endl;
+  }
+  arg_callback_map[key] = arg_callback_func;
+}
+
+void
+assign_callback_to_arg(const char* arg, arg_callback_f arg_callback_func)
+{
+  string key(arg);
+  if (arg_callback_map.find(key) != arg_callback_map.end())
+  {
+    cout << "Warning: arg callback " << key << " overwritten" << endl;
   }
   arg_callback_map[key] = arg_callback_func;
 }

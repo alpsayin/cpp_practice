@@ -36,6 +36,20 @@ example_callback(const char* arg_val);
 bool
 example_callback_with_argument(const char* arg_val);
 
+// macro definition that inserts function name into call
+#define assign_callback_to_arg_LOG(arg, arg_callback_func) \
+  assign_callback_to_arg(arg, arg_callback_func, #arg_callback_func)
+
+/**
+ * @brief assigns a function of type arg_callback_f to an argument
+ *
+ * @param arg const string to be searched as an argument inside all arguments
+ * @param arg_callback_func function to be called when argument is found
+ * @param funcname function name as a c-string
+ */
+void
+assign_callback_to_arg(const char* arg, arg_callback_f arg_callback_func, const char* funcname);
+
 /**
  * @brief assigns a function of type arg_callback_f to an argument
  *
