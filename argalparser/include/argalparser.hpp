@@ -2,9 +2,12 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <functional>
 
 #ifndef _ARGUTILS_HPP
 #define _ARGUTILS_HPP
+
+using std::function;
 
 /**
  * @brief argument_callback_f function type definition
@@ -13,7 +16,7 @@
  * (i.e. return true if the processor was expecting an argument)
  *
  */
-typedef bool (*arg_callback_f)(const char* arg_val);
+using arg_callback_f = function<bool(const char*)>;
 
 /**
  * @brief example arg_callback function that doesnt process the argument
