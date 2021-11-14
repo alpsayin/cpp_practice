@@ -61,9 +61,18 @@ process_args(int argc, char const* argv[])
     {
       if (i + 1 < argc)
       {
-        if (it->second(argv[i + 1]))
+        if (it->second(argv[i + 1])) // return true means skip next argument
         {
-          i++;
+          // parameter check before skipping next argument
+          auto check = arg_callback_map.find(string(argv[i + 1]));
+          if (check != arg_callback_map.end())
+          {
+            cout << "Warning: argument " << argv[i] << " entered without parameter" << endl;
+          }
+          else
+          {
+            i++; // only skip if the next argument is not a known flag
+          }
         }
       }
       else
