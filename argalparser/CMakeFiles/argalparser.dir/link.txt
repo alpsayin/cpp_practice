@@ -1,0 +1,2 @@
+C:\SysGCC\mingw32\bin\ar.exe qc libargalparser.a CMakeFiles/argalparser.dir/src/argalparser.cpp.obj
+C:\SysGCC\mingw32\bin\ranlib.exe libargalparser.a

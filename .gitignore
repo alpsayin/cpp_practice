@@ -1,0 +1,5 @@
+/.clang-format
+/.vscode
+/build
+/cmake_install.cmake
+/Makefile
