@@ -1,4 +1,7 @@
 
+macro(auto_set_toolchain)
+  
+if(NOT DEFINED IS_TOOLCHAIN_SET)
 
 message("Starting auto set toolchain")
 
@@ -24,4 +27,8 @@ set(CMAKE_OBJCOPY "${toolchain}/bin/objcopy${TOOLCHAIN_EXECUTABLE_EXTENSION}" CA
 
 set(IS_TOOLCHAIN_SET true CACHE INTERNAL "")
 
+endif()
+
 message("Make program is " ${CMAKE_MAKE_PROGRAM})
+
+endmacro()
