@@ -57,28 +57,27 @@ process_args(int argc, char const* argv[])
   {
     // cout << "Arg #" << i << " : \"" << argv[i] << '\"' << endl;
     auto it = arg_callback_map.find(string(argv[i]));
-    if (it != arg_callback_map.end())
+    if (it == arg_callback_map.end())
     {
-      if (i + 1 < argc)
-      {
-        if (it->second(argv[i + 1])) // return true means skip next argument
-        {
-          // parameter check before skipping next argument
-          auto check = arg_callback_map.find(string(argv[i + 1]));
-          if (check != arg_callback_map.end())
-          {
-            cout << "Warning: argument " << argv[i] << " entered without parameter" << endl;
-          }
-          else
-          {
-            i++; // only skip if the next argument is not a known flag
-          }
-        }
-      }
-      else
-      {
-        it->second(NULL);
-      }
+      // not a known flag
+      continue;
+    }
+    const char* param = (i + 1 < argc) ? argv[i + 1] : NULL;
+    const bool should_skip_next = it->second(param);
+    if (!should_skip_next) // return true means skip next argument
+    {
+      // argument processed. nothing else to do
+      continue;
+    }
+    // parameter check before skipping next argument
+    const auto check = arg_callback_map.find(string(argv[i + 1]));
+    if (check == arg_callback_map.end())
+    {
+      i++; // only skip if the next argument is not a known flag
+    }
+    else
+    {
+      cout << "Warning: argument " << argv[i] << " entered without parameter" << endl;
     }
   }
 }
