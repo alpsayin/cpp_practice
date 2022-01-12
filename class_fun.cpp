@@ -53,8 +53,11 @@ class_fun()
   Polygon* ppoly2 = &trgl;
   ppoly1->set_values(4, 5);
   ppoly2->set_values(4, 5);
-  cout << rect.area() << '\n';
-  cout << trgl.area() << '\n';
+  cout << "Rect area is " << rect.area() << '\n';
+  cout << "Trgl area is " << trgl.area() << '\n';
+  cout << "Rect(Poly) area is " << ppoly1->area() << '\n';
+  cout << "Trgl(Poly) area is " << ppoly2->area() << '\n';
+  cout << stupid_area(rect) << endl;
 }
 
 #endif
