@@ -15,5 +15,6 @@ add_executable(${PROJECT_NAME}
                 main.cpp 
                 vector_fun.cpp 
                 integer_fun.cpp
+                class_fun.cpp
                 )
 target_link_libraries(${PROJECT_NAME} PUBLIC argalparser)

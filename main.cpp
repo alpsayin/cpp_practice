@@ -8,6 +8,7 @@
 #include "argalparser.hpp"
 #include "integer_fun.hpp"
 #include "vector_fun.hpp"
+#include "class_fun.hpp"
 
 using std::cout;
 using std::endl;
@@ -64,6 +65,8 @@ main(int argc, char const* argv[])
 
     cout << "The sum = " << nums_to_sum.back() << endl;
   }
+
+  class_fun();
 
   return 0;
 }
