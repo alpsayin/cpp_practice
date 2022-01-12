@@ -14,6 +14,8 @@ protected:
 public:
   void
   set_values(int a, int b);
+  virtual int
+  area();
 };
 
 class Rectangle : public Polygon

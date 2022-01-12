@@ -22,6 +22,11 @@ public:
     width = a;
     height = b;
   }
+  virtual int
+  area()
+  {
+    return 0;
+  }
 };
 
 class Rectangle : public Polygon
