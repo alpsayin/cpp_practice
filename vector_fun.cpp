@@ -1,7 +1,7 @@
 
 
 #include <iostream>
-#include "vector_fun.hpp"
+#include "include/vector_fun.hpp"
 
 #ifndef _VECTOR_FUN_CPP
 #define _VECTOR_FUN_CPP

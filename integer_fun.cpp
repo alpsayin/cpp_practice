@@ -3,7 +3,7 @@
 #include <iostream>
 #include <numeric>
 #include <memory>
-#include "integer_fun.hpp"
+#include "include/integer_fun.hpp"
 
 #ifndef _INTEGER_FUN_CPP
 #define _INTEGER_FUN_CPP
