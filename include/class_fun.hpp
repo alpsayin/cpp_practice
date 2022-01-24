@@ -14,9 +14,10 @@ protected:
 public:
   void
   set_values(int a, int b);
-  // virtual string 
-  string 
+  string
   get_name();
+  virtual string
+  get_name_virtual();
   virtual int
   area();
   friend int
@@ -30,6 +31,8 @@ public:
   area();
   string
   get_name();
+  string
+  get_name_virtual();
 };
 
 class Triangle : public Polygon
@@ -39,6 +42,8 @@ public:
   area();
   string
   get_name();
+  string
+  get_name_virtual();
 };
 
 void

@@ -57,6 +57,23 @@ Triangle ::get_name()
   return "Triangle";
 }
 
+string
+Polygon ::get_name_virtual()
+{
+  return "Polygon (v)";
+}
+
+string
+Rectangle ::get_name_virtual()
+{
+  return "Rectangle (v)";
+}
+
+string
+Triangle ::get_name_virtual()
+{
+  return "Triangle (v)";
+}
 
 void
 class_fun()
@@ -74,11 +91,22 @@ class_fun()
   cout << "Trgl(Poly) area is " << ppoly2->area() << '\n';
   cout << "Stupid rect " << stupid_area(rect) << endl;
   cout << "Stupid triangle " << stupid_area(trgl) << endl;
+
+  cout << endl;
+
   cout << "weird name " << weird.get_name() << endl;
   cout << "Rect name " << rect.get_name() << endl;
   cout << "Trgl name " << trgl.get_name() << endl;
-  cout << "Rect(Poly) name " << ppoly1->get_name() << endl;
-  cout << "Trgl(Poly) name " << ppoly2->get_name() << endl;
+  cout << "Rect(pPoly) name " << ppoly1->get_name() << endl;
+  cout << "Trgl(pPoly) name " << ppoly2->get_name() << endl;
+
+  cout << endl;
+
+  cout << "weird name virtual " << weird.get_name_virtual() << endl;
+  cout << "Rect name virtual " << rect.get_name_virtual() << endl;
+  cout << "Trgl name virtual " << trgl.get_name_virtual() << endl;
+  cout << "Rect(pPoly) name virtual " << ppoly1->get_name_virtual() << endl;
+  cout << "Trgl(pPoly) name virtual " << ppoly2->get_name_virtual() << endl;
 }
 
 #endif
