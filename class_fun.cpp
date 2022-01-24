@@ -8,9 +8,10 @@
 
 using namespace std;
 
-int stupid_area(const Polygon& p)
+int
+stupid_area(const Polygon& p)
 {
-  return -p.height*p.width;
+  return -p.height * p.width;
 }
 
 void
@@ -21,37 +22,37 @@ Polygon::set_values(int a, int b)
 }
 
 int
-Polygon :: area()
+Polygon ::area()
 {
   return 0;
 }
 
 int
-Rectangle :: area()
+Rectangle ::area()
 {
   return width * height;
 }
 
 int
-Triangle :: area()
+Triangle ::area()
 {
   return width * height / 2;
 }
 
 string
-Polygon :: get_name()
+Polygon ::get_name()
 {
   return "Polygon";
 }
 
 string
-Rectangle :: get_name()
+Rectangle ::get_name()
 {
   return "Rectangle";
 }
 
 string
-Triangle :: get_name()
+Triangle ::get_name()
 {
   return "Triangle";
 }

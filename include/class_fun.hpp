@@ -19,7 +19,8 @@ public:
   get_name();
   virtual int
   area();
-  friend int stupid_area(const Polygon&);
+  friend int
+  stupid_area(const Polygon&);
 };
 
 class Rectangle : public Polygon
@@ -27,7 +28,8 @@ class Rectangle : public Polygon
 public:
   int
   area();
-  string get_name();
+  string
+  get_name();
 };
 
 class Triangle : public Polygon
@@ -35,7 +37,8 @@ class Triangle : public Polygon
 public:
   int
   area();
-  string get_name();
+  string
+  get_name();
 };
 
 void
